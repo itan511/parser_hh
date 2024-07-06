@@ -173,7 +173,7 @@ def get_vacancies(keyword, city):
         # Если вакансий нет:
         else:
             output.put_text("Нет вакансий по данному запросу")
-
+    # Если произошла ошибка
     else:
         output.put_text(f"Request failed with status code: {response.status_code}")
 
