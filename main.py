@@ -19,12 +19,22 @@ try:
     try:
         cur = conn.cursor()
 
-        cur.execute("CREATE TABLE vacancies (id SERIAL PRIMARY KEY, hh_id VARCHAR(255), name VARCHAR(255), city VARCHAR(255), company VARCHAR(255), url TEXT, description VARCHAR(255), salary VARCHAR(255));")
+        cur.execute("""CREATE TABLE vacancies (
+        id SERIAL PRIMARY KEY, 
+        hh_id VARCHAR(255), 
+        name VARCHAR(255), 
+        city VARCHAR(255), 
+        company VARCHAR(255), 
+        url TEXT, 
+        description VARCHAR(255), 
+        salary VARCHAR(255)
+        );""")
 
         conn.commit()
 
         for x in range(1, 21):
-            cur.execute("""INSERT INTO vacancies (hh_id, name, city, company, url, description, salary) VALUES ('', '', '', '', '', '', '')""")
+            cur.execute("""INSERT INTO vacancies (hh_id, name, city, company, url, description, salary) 
+                VALUES ('', '', '', '', '', '', '')""")
 
         print("таблица создана")
 
